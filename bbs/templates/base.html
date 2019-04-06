@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ blog.title }}</title>
+    <link rel="stylesheet" href="/static/bootstrap-3.3.7/css/bootstrap.css">
+    <link rel="stylesheet" href="/static/css/blog.css">
+    <link rel="stylesheet" href="/static/theme/{{ blog.theme }}">
+</head>
+<body>
+<!-- 博客的顶部菜单 开始-->
+<div class="head"></div>
+<!-- 博客的顶部菜单 结束-->
+
+
+<!-- 页面主题 开始-->
+<div class="container">
+    <div class="row">
+        <!-- 左侧侧边栏 开始 -->
+        <div class="col-md-2">
+            {% load s12 %}
+            {% left_menu username %}
+
+            <div>{% hehe 'alex' %}</div>
+        </div>
+        <!-- 左侧侧边栏 结束 -->
+        <!-- 右侧文章列表 开始 -->
+        <div class="col-md-10">
+            {% block page-main %}
+
+            {% endblock page-main %}
+        </div>
+        <!-- 右侧文章列表 结束 -->
+    </div>
+</div>
+<!-- 页面主题 结束-->
+<script src="/static/js/jquery.js"></script>
+<script src="/static/bootstrap-3.3.7/js/bootstrap.js"></script>
+{% block page-js %}
+
+{% endblock %}
+</body>
+</html>
